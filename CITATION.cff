@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+title: "Desulfurization Reaction–Transport Regimes"
+message: "If you use this repository, please cite the associated technical framework."
+type: software
+
+authors:
+  - family-names: Saylam
+    given-names: Ahmad
+    orcid: "https://orcid.org/0000-0001-7484-1265"
+
+abstract: >
+  Engineering diagnostic framework for desulfurization reaction–transport
+  regimes, process intensification, and scale-up evaluation in gas and
+  petroleum streams.
+
+keywords:
+  - desulfurization
+  - hydrodesulfurization
+  - oxidative desulfurization
+  - adsorption
+  - hydrodynamic cavitation
+  - mass transfer
+  - reaction engineering
+  - sulfur removal
+  - process intensification
+  - kinetic modeling
+
+license: MIT
+
+repository-code: "https://github.com/saylamah/desulfurization-reaction-transport-regimes"
+
+preferred-citation:
+  type: article
+  title: "Reaction–Transport Regime Analysis for Desulfurization of Gas and Petroleum Streams: An Engineering Diagnostic Framework"
+  authors:
+    - family-names: Saylam
+      given-names: Ahmad
+      orcid: "https://orcid.org/0000-0001-7484-1265"
+  year: 2026
+  doi: "10.5281/zenodo.20095695"
