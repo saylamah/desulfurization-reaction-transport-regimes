@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 title: "Desulfurization Reaction–Transport Regimes"
-message: "If you use this repository, please cite the associated technical framework."
+message: "If you use this repository, please cite the software repository and the associated technical framework."
 type: software
 
 authors:
@@ -28,6 +28,8 @@ keywords:
 license: MIT
 
 repository-code: "https://github.com/saylamah/desulfurization-reaction-transport-regimes"
+
+doi: "10.5281/zenodo.21278797"
 
 preferred-citation:
   type: article
