@@ -1,5 +1,7 @@
 # Desulfurization Reaction–Transport Regimes
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21278797.svg)](https://doi.org/10.5281/zenodo.21278797)
+
 Engineering diagnostic framework for desulfurization reaction–transport regimes, process intensification, and scale-up evaluation in gas and petroleum streams.
 
 ## DOI
