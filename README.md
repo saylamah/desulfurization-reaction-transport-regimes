@@ -70,3 +70,19 @@ Within the present desulfurization repository, hydrodynamic cavitation is treate
 docs/       Technical documentation and framework notes
 examples/   Simple calculation examples
 data/       Example parameters and demonstration data
+
+## Technical Limitations and Responsible Use
+
+The models, equations, classifications, example scripts, and demonstration parameters in this repository are intended for engineering screening, regime diagnosis, methodological development, and educational or research use.
+
+The example calculations use illustrative parameters and should not be interpreted as validated design data for a specific feedstock, sulfur species, catalyst, adsorbent, reactor, industrial unit, or operating condition.
+
+Application to real desulfurization systems requires appropriate validation of sulfur speciation, sulfur balances, reaction kinetics, mass transfer, internal diffusion, adsorption performance, oxidant utilization, downstream separation, energy consumption, materials compatibility, catalyst or adsorbent durability, product quality, process safety, reliability, and scale-up transferability.
+
+The repository does not constitute a final process design package, safety assessment, regulatory recommendation, or guarantee of industrial performance.
+
+## License
+
+Software and example scripts are released under the MIT License.
+
+The companion scientific paper should be cited separately using its Zenodo DOI.
