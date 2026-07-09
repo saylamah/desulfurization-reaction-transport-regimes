@@ -1,0 +1,11 @@
+parameter,symbol,value,unit,example_context
+particle_radius,Rp,1.0e-3,m,HDS internal diffusion screening
+first_order_rate_constant,k,0.05,s^-1,HDS internal diffusion screening
+effective_diffusivity,Deff,1.0e-8,m^2/s,HDS internal diffusion screening
+ods_apparent_rate_constant,k_obs,0.02,s^-1,ODS reaction-mass-transfer screening
+ods_mass_transfer_coefficient,kLa,0.005,s^-1,ODS reaction-mass-transfer screening
+reference_apparent_rate_constant,k_app_ref,0.004,s^-1,Cavitation-assisted desulfurization screening
+hc_apparent_rate_constant,k_app_HC,0.012,s^-1,Cavitation-assisted desulfurization screening
+reference_sulfur_removed,mS_ref,2.0,g,Cavitation-assisted desulfurization screening
+hc_sulfur_removed,mS_HC,5.5,g,Cavitation-assisted desulfurization screening
+additional_hc_energy,E_HC,0.75,kWh,Cavitation-assisted desulfurization screening
