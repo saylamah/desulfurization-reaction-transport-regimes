@@ -10,6 +10,16 @@ Repository archive DOI: [10.5281/zenodo.21278797](https://doi.org/10.5281/zenodo
 
 Companion scientific paper DOI: [10.5281/zenodo.20095695](https://doi.org/10.5281/zenodo.20095695)
 
+## Citation
+
+If you use this repository, please cite the archived software repository:
+
+> Saylam, A. (2026). *Desulfurization Reaction–Transport Regimes* (v1.0.0). Zenodo. DOI: 10.5281/zenodo.21278797
+
+For the scientific and engineering framework underlying this repository, please also cite:
+
+> Saylam, A. (2026). *Reaction–Transport Regime Analysis for Desulfurization of Gas and Petroleum Streams: An Engineering Diagnostic Framework*. Zenodo. DOI: 10.5281/zenodo.20095695
+
 ## Scope
 
 This repository supports regime-based analysis of sulfur removal from:
