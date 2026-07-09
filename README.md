@@ -34,6 +34,18 @@ and supported by the process-intensification framework:
 
 **Industrial Usefulness and Technology Selection in Process Intensification: Energy-Normalized Metrics for Hydrodynamic Cavitation**
 
+## Supporting Process-Intensification Framework
+
+The desulfurization regime-analysis methodology is complemented by the following independent technical work:
+
+**Industrial Usefulness and Technology Selection in Process Intensification: Energy-Normalized Metrics for Hydrodynamic Cavitation**
+
+DOI: [10.5281/zenodo.20593905](https://doi.org/10.5281/zenodo.20593905)
+
+This supporting framework introduces the **Industrial Usefulness Window** and energy-normalized decision metrics for evaluating whether a process-intensification technology creates transferable industrial value after accounting for energy demand, chemical use, pressure drop, separation burden, erosion, fouling, maintenance, product quality, reliability, and scale-up constraints.
+
+Within the present desulfurization repository, hydrodynamic cavitation is treated as a potential **reaction–transport intensification layer**, not as a universal stand-alone solution. Its usefulness depends on whether it addresses an identified process bottleneck and provides positive net benefit relative to a defined reference case.
+
 ## Repository Structure
 
 ```text
