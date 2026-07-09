@@ -1,20 +1,22 @@
 # Desulfurization Reaction–Transport Regimes
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21278797.svg)](https://doi.org/10.5281/zenodo.21278797)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21278796.svg)](https://doi.org/10.5281/zenodo.21278796)
 
 Engineering diagnostic framework for desulfurization reaction–transport regimes, process intensification, and scale-up evaluation in gas and petroleum streams.
 
 ## DOI
 
-Repository archive DOI: [10.5281/zenodo.21278797](https://doi.org/10.5281/zenodo.21278797)
+Repository concept DOI (all versions): [10.5281/zenodo.21278796](https://doi.org/10.5281/zenodo.21278796)
+
+Latest archived release (v1.0.1): [10.5281/zenodo.21279040](https://doi.org/10.5281/zenodo.21279040)
 
 Companion scientific paper DOI: [10.5281/zenodo.20095695](https://doi.org/10.5281/zenodo.20095695)
 
 ## Citation
 
-If you use this repository, please cite the archived software repository:
+If you use this repository generally, please cite:
 
-> Saylam, A. (2026). *Desulfurization Reaction–Transport Regimes* (v1.0.0). Zenodo. DOI: 10.5281/zenodo.21278797
+> Saylam, A. (2026). *Desulfurization Reaction–Transport Regimes*. Zenodo. DOI: 10.5281/zenodo.21278796
 
 For the scientific and engineering framework underlying this repository, please also cite:
 
