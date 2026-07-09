@@ -2,6 +2,12 @@
 
 Engineering diagnostic framework for desulfurization reaction–transport regimes, process intensification, and scale-up evaluation in gas and petroleum streams.
 
+## DOI
+
+Repository archive DOI: [10.5281/zenodo.21278797](https://doi.org/10.5281/zenodo.21278797)
+
+Companion scientific paper DOI: [10.5281/zenodo.20095695](https://doi.org/10.5281/zenodo.20095695)
+
 ## Scope
 
 This repository supports regime-based analysis of sulfur removal from:
