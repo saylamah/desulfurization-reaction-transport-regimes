@@ -2,90 +2,123 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21278796.svg)](https://doi.org/10.5281/zenodo.21278796)
 
-Engineering diagnostic framework for desulfurization reaction–transport regimes, process intensification, and scale-up evaluation in gas and petroleum streams.
+An engineering diagnostic framework for identifying reaction–transport limitations, evaluating process-intensification options, and supporting scale-up decisions in gas- and petroleum-stream desulfurization.
 
-## DOI
+---
 
-Repository concept DOI (all versions): [10.5281/zenodo.21278796](https://doi.org/10.5281/zenodo.21278796)
+## Purpose
 
-Latest archived release (v1.0.1): [10.5281/zenodo.21279040](https://doi.org/10.5281/zenodo.21279040)
+Desulfurization performance is rarely controlled by reaction chemistry alone.
 
-Companion scientific paper DOI: [10.5281/zenodo.20095695](https://doi.org/10.5281/zenodo.20095695)
+Observed sulfur removal may depend simultaneously on:
 
-## Citation
+- intrinsic reaction kinetics;
+- gas–liquid or liquid–solid mass transfer;
+- internal pore diffusion;
+- adsorption and surface availability;
+- mixing and hydrodynamics;
+- oxidant or hydrogen utilization;
+- downstream separation;
+- catalyst or adsorbent durability;
+- energy input;
+- feed composition and sulfur speciation.
 
-If you use this repository generally, please cite:
+This repository provides a structured framework for distinguishing these effects and determining which limitation should be addressed before modifying chemistry, equipment, operating conditions, or process-intensification strategy.
 
-> Saylam, A. (2026). *Desulfurization Reaction–Transport Regimes*. Zenodo. DOI: 10.5281/zenodo.21278796
+---
 
-For the scientific and engineering framework underlying this repository, please also cite:
+## Practical Engineering Questions
 
-> Saylam, A. (2026). *Reaction–Transport Regime Analysis for Desulfurization of Gas and Petroleum Streams: An Engineering Diagnostic Framework*. Zenodo. DOI: 10.5281/zenodo.20095695
+The framework is intended to support questions such as:
 
-## Scope
+- Is the observed process primarily reaction-controlled or transport-limited?
+- Would increasing catalyst activity materially improve overall sulfur removal?
+- Is oxidant addition limited by chemistry, dispersion, mass transfer, or downstream separation?
+- Could adsorption capacity, pore diffusion, or regeneration determine performance?
+- Does an intensification method address the actual process bottleneck?
+- Are reported removal values transferable across feeds, sulfur species, reactors, and operating conditions?
+- What validation evidence is required before pilot or industrial scale-up?
+- Does the expected improvement justify additional energy, chemicals, pressure drop, maintenance, or separation burden?
 
-This repository supports regime-based analysis of sulfur removal from:
+---
 
-- natural gas and acid-gas streams
-- light hydrocarbons
-- diesel and middle distillates
-- heavy petroleum fractions
+## Application Scope
 
-The framework connects intrinsic reaction chemistry with mass transfer, internal diffusion, adsorption, hydrodynamics, downstream separation, energy input, and scale-up constraints.
+The methodology is relevant to sulfur removal from:
 
-## Technical Focus
+- natural gas and acid-gas streams;
+- light hydrocarbons;
+- diesel and middle distillates;
+- heavy petroleum fractions.
 
-- Hydrodesulfurization
-- Oxidative desulfurization
-- Adsorptive and reactive adsorptive desulfurization
-- Catalytic oxidation and sweetening
-- Radical-assisted oxidation
-- Hydrodynamic cavitation as a process-intensification layer
-- Energy-normalized sulfur removal
-- Reaction-controlled, mass-transfer-limited, diffusion-limited, separation-limited, and mixed regimes
+It may support the engineering assessment of:
 
-## Basis
+- hydrodesulfurization;
+- oxidative desulfurization;
+- adsorptive desulfurization;
+- reactive adsorptive desulfurization;
+- catalytic oxidation and sweetening;
+- radical-assisted oxidation;
+- hydrodynamic and mixing-based process intensification.
 
-This repository is based on the companion technical work:
+---
+
+## Reaction–Transport Regimes
+
+The framework considers several possible controlling or interacting regimes:
+
+- reaction-controlled;
+- external mass-transfer-limited;
+- internal diffusion-limited;
+- adsorption- or capacity-limited;
+- oxidant- or reactant-utilization-limited;
+- mixing- or hydrodynamics-limited;
+- downstream-separation-limited;
+- mixed or transitional regimes.
+
+The purpose of the classification is not merely descriptive. It is intended to connect the identified regime with appropriate experimental, modelling, design, and scale-up actions.
+
+---
+
+## Process-Intensification Perspective
+
+Hydrodynamic cavitation and related intensification technologies are treated as possible **reaction–transport intensification layers**, not as universal stand-alone desulfurization solutions.
+
+Their usefulness depends on whether they:
+
+1. address an identified kinetic, transport, dispersion, or phase-contacting limitation;
+2. improve sulfur removal or process performance relative to a defined reference case;
+3. maintain acceptable product quality;
+4. avoid disproportionate energy, chemical, pressure-drop, erosion, fouling, or separation penalties;
+5. remain technically and economically transferable during scale-up.
+
+This repository therefore emphasizes energy-normalized and system-level assessment rather than removal percentage alone.
+
+---
+
+## Scientific and Engineering Basis
+
+The repository is based on:
+
+### Primary framework
 
 **Reaction–Transport Regime Analysis for Desulfurization of Gas and Petroleum Streams: An Engineering Diagnostic Framework**
 
-and supported by the process-intensification framework:
+DOI: [10.5281/zenodo.20095695](https://doi.org/10.5281/zenodo.20095695)
 
-**Industrial Usefulness and Technology Selection in Process Intensification: Energy-Normalized Metrics for Hydrodynamic Cavitation**
-
-## Supporting Process-Intensification Framework
-
-The desulfurization regime-analysis methodology is complemented by the following independent technical work:
+### Supporting process-intensification framework
 
 **Industrial Usefulness and Technology Selection in Process Intensification: Energy-Normalized Metrics for Hydrodynamic Cavitation**
 
 DOI: [10.5281/zenodo.20593905](https://doi.org/10.5281/zenodo.20593905)
 
-This supporting framework introduces the **Industrial Usefulness Window** and energy-normalized decision metrics for evaluating whether a process-intensification technology creates transferable industrial value after accounting for energy demand, chemical use, pressure drop, separation burden, erosion, fouling, maintenance, product quality, reliability, and scale-up constraints.
+The supporting work introduces the **Industrial Usefulness Window** and energy-normalized decision metrics for evaluating whether an intensification technology creates transferable industrial value after accounting for energy demand, chemical consumption, pressure drop, separation burden, erosion, fouling, maintenance, product quality, reliability, and scale-up constraints.
 
-Within the present desulfurization repository, hydrodynamic cavitation is treated as a potential **reaction–transport intensification layer**, not as a universal stand-alone solution. Its usefulness depends on whether it addresses an identified process bottleneck and provides positive net benefit relative to a defined reference case.
+---
 
-## Repository Structure
+## Repository Contents
 
 ```text
 docs/       Technical documentation and framework notes
-examples/   Simple calculation examples
-data/       Example parameters and demonstration data
-```
-
-## Technical Limitations and Responsible Use
-
-The models, equations, classifications, example scripts, and demonstration parameters in this repository are intended for engineering screening, regime diagnosis, methodological development, and educational or research use.
-
-The example calculations use illustrative parameters and should not be interpreted as validated design data for a specific feedstock, sulfur species, catalyst, adsorbent, reactor, industrial unit, or operating condition.
-
-Application to real desulfurization systems requires appropriate validation of sulfur speciation, sulfur balances, reaction kinetics, mass transfer, internal diffusion, adsorption performance, oxidant utilization, downstream separation, energy consumption, materials compatibility, catalyst or adsorbent durability, product quality, process safety, reliability, and scale-up transferability.
-
-The repository does not constitute a final process design package, safety assessment, regulatory recommendation, or guarantee of industrial performance.
-
-## License
-
-Software and example scripts are released under the MIT License.
-
-The companion scientific paper should be cited separately using its Zenodo DOI.
+examples/   Simplified calculation examples
+data/       Illustrative parameters and demonstration data
