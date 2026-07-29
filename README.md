@@ -100,13 +100,13 @@ This repository therefore emphasizes energy-normalized and system-level assessme
 
 The repository is based on:
 
-### Primary framework
+### Primary Framework
 
 **Reaction–Transport Regime Analysis for Desulfurization of Gas and Petroleum Streams: An Engineering Diagnostic Framework**
 
 DOI: [10.5281/zenodo.20095695](https://doi.org/10.5281/zenodo.20095695)
 
-### Supporting process-intensification framework
+### Supporting Process-Intensification Framework
 
 **Industrial Usefulness and Technology Selection in Process Intensification: Energy-Normalized Metrics for Hydrodynamic Cavitation**
 
