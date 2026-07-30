@@ -1,11 +1,33 @@
-parameter,symbol,value,unit,example_context
-particle_radius,Rp,1.0e-3,m,HDS internal diffusion screening
-first_order_rate_constant,k,0.05,s^-1,HDS internal diffusion screening
-effective_diffusivity,Deff,1.0e-8,m^2/s,HDS internal diffusion screening
-ods_apparent_rate_constant,k_obs,0.02,s^-1,ODS reaction-mass-transfer screening
-ods_mass_transfer_coefficient,kLa,0.005,s^-1,ODS reaction-mass-transfer screening
-reference_apparent_rate_constant,k_app_ref,0.004,s^-1,Cavitation-assisted desulfurization screening
-hc_apparent_rate_constant,k_app_HC,0.012,s^-1,Cavitation-assisted desulfurization screening
-reference_sulfur_removed,mS_ref,2.0,g,Cavitation-assisted desulfurization screening
-hc_sulfur_removed,mS_HC,5.5,g,Cavitation-assisted desulfurization screening
-additional_hc_energy,E_HC,0.75,kWh,Cavitation-assisted desulfurization screening
+example_id,case_id,case_label,parameter,symbol,value,unit,description,data_status
+hds_internal_diffusion,hds_default,Illustrative HDS porous-particle case,particle_radius_m,R_p,1.0e-3,m,Catalyst-particle radius used in the spherical first-order diffusion model,illustrative_not_validated
+hds_internal_diffusion,hds_default,Illustrative HDS porous-particle case,volumetric_rate_constant_s_inv,k_v,5.0e-2,s^-1,Intrinsic first-order rate coefficient on a compatible catalyst-particle-volume basis,illustrative_not_validated
+hds_internal_diffusion,hds_default,Illustrative HDS porous-particle case,effective_diffusivity_m2_s,D_eff,1.0e-8,m^2/s,Effective intraparticle diffusivity of the representative sulfur species,illustrative_not_validated
+ods_reaction_transfer,ods_default,Illustrative multiphase ODS case,reaction_coefficient_s_inv,k_rxn,2.0e-2,s^-1,Pseudo-first-order reaction coefficient on the same concentration and phase-volume basis as the transfer coefficient,illustrative_not_validated
+ods_reaction_transfer,ods_default,Illustrative multiphase ODS case,effective_transfer_coefficient_s_inv,k_mt_eff,5.0e-3,s^-1,Effective first-order interphase-transfer coefficient including any required equilibrium and basis conversion,illustrative_not_validated
+ods_reaction_transfer,ods_default,Illustrative multiphase ODS case,dominance_fraction,f_dom,8.0e-1,dimensionless,Fraction of modeled total resistance required for a contribution to be labelled dominant,illustrative_screening_convention
+ods_reaction_transfer,ods_default,Illustrative multiphase ODS case,sensitivity_factor,f_sens,2.0,dimensionless,Multiplicative factor used for equal reaction-versus-transfer sensitivity comparisons,illustrative_screening_convention
+cavitation_comparison,reference_case,Illustrative non-cavitating reference,apparent_rate_coefficient_s_inv,k_app_ref,4.0e-3,s^-1,Apparent pseudo-first-order coefficient used only for reference comparison,illustrative_not_validated
+cavitation_comparison,reference_case,Illustrative non-cavitating reference,initial_sulfur_in_feed_g,m_S_in_ref,6.0,g,Initial sulfur inventory in the defined reference feed basis,illustrative_not_validated
+cavitation_comparison,reference_case,Illustrative non-cavitating reference,sulfur_in_recovered_product_g,m_S_product_ref,4.0,g,Sulfur measured in the recovered reference product after the defined treatment and separation sequence,illustrative_not_validated
+cavitation_comparison,reference_case,Illustrative non-cavitating reference,feed_volume_m3,V_feed_ref,2.0e-1,m^3,Feed volume used as the reference comparison basis,illustrative_not_validated
+cavitation_comparison,reference_case,Illustrative non-cavitating reference,treatment_time_s,t_ref,1.8e3,s,Total treatment time for the reference case,illustrative_not_validated
+cavitation_comparison,reference_case,Illustrative non-cavitating reference,measured_total_electrical_energy_kwh,E_el_ref,2.5e-1,kWh,Illustrative measured total electrical energy within the declared reference process boundary,illustrative_not_validated
+cavitation_comparison,reference_case,Illustrative non-cavitating reference,initial_temperature_k,T_0_ref,2.9815e2,K,Initial bulk temperature of the reference case,illustrative_not_validated
+cavitation_comparison,reference_case,Illustrative non-cavitating reference,final_temperature_k,T_f_ref,3.0015e2,K,Final bulk temperature of the reference case,illustrative_not_validated
+cavitation_comparison,cavitation_case,Illustrative cavitation-assisted case,apparent_rate_coefficient_s_inv,k_app_HC,1.2e-2,s^-1,Apparent pseudo-first-order coefficient used only for intensified-case comparison,illustrative_not_validated
+cavitation_comparison,cavitation_case,Illustrative cavitation-assisted case,initial_sulfur_in_feed_g,m_S_in_HC,6.0,g,Initial sulfur inventory in the defined cavitation-assisted feed basis,illustrative_not_validated
+cavitation_comparison,cavitation_case,Illustrative cavitation-assisted case,sulfur_in_recovered_product_g,m_S_product_HC,5.0e-1,g,Sulfur measured in the recovered cavitation-assisted product after the defined treatment and separation sequence,illustrative_not_validated
+cavitation_comparison,cavitation_case,Illustrative cavitation-assisted case,feed_volume_m3,V_feed_HC,2.0e-1,m^3,Feed volume used as the cavitation-assisted comparison basis,illustrative_not_validated
+cavitation_comparison,cavitation_case,Illustrative cavitation-assisted case,treatment_time_s,t_HC,1.8e3,s,Total treatment time for the cavitation-assisted case,illustrative_not_validated
+cavitation_comparison,cavitation_case,Illustrative cavitation-assisted case,measured_total_electrical_energy_kwh,E_el_HC,1.0,kWh,Illustrative measured total electrical energy within the declared cavitation-assisted process boundary,illustrative_not_validated
+cavitation_comparison,cavitation_case,Illustrative cavitation-assisted case,initial_temperature_k,T_0_HC,2.9815e2,K,Initial bulk temperature of the cavitation-assisted case,illustrative_not_validated
+cavitation_comparison,cavitation_case,Illustrative cavitation-assisted case,final_temperature_k,T_f_HC,3.0015e2,K,Final bulk temperature of the cavitation-assisted case,illustrative_not_validated
+cavitation_hydraulics,hc_operating_point,Illustrative cavitation hydraulic operating point,upstream_pressure_abs_pa,p_up_abs,5.5e5,Pa,Absolute pressure upstream of the defined cavitation-device boundary,illustrative_not_validated
+cavitation_hydraulics,hc_operating_point,Illustrative cavitation hydraulic operating point,downstream_reference_pressure_abs_pa,p_ref_abs,1.5e5,Pa,Absolute downstream reference pressure used in the stated cavitation-number definition,illustrative_not_validated
+cavitation_hydraulics,hc_operating_point,Illustrative cavitation hydraulic operating point,vapor_pressure_pa,p_v,3.17e3,Pa,Fluid vapor pressure at the stated operating temperature,illustrative_not_validated
+cavitation_hydraulics,hc_operating_point,Illustrative cavitation hydraulic operating point,density_kg_m3,rho,8.30e2,kg/m^3,Representative fluid density used in the hydraulic calculation,illustrative_not_validated
+cavitation_hydraulics,hc_operating_point,Illustrative cavitation hydraulic operating point,characteristic_velocity_m_s,v,2.5e1,m/s,Characteristic velocity associated with the stated cavitation-number definition,illustrative_not_validated
+cavitation_hydraulics,hc_operating_point,Illustrative cavitation hydraulic operating point,loop_flow_rate_m3_s,Q_loop,2.0e-3,m^3/s,Volumetric flow rate through the recirculation loop,illustrative_not_validated
+cavitation_hydraulics,hc_operating_point,Illustrative cavitation hydraulic operating point,operating_time_s,t_op,1.8e3,s,Duration used for the hydraulic energy cross-check,illustrative_not_validated
+cavitation_hydraulics,hc_operating_point,Illustrative cavitation hydraulic operating point,pump_efficiency,eta_pump,7.0e-1,dimensionless,Assumed pump hydraulic efficiency used only for the illustrative electrical-energy estimate,illustrative_assumption
+cavitation_hydraulics,hc_operating_point,Illustrative cavitation hydraulic operating point,drive_efficiency,eta_drive,9.0e-1,dimensionless,Assumed motor-or-drive efficiency used only for the illustrative electrical-energy estimate,illustrative_assumption
