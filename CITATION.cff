@@ -1,42 +1,67 @@
 cff-version: 1.2.0
+message: "If you use this repository, cite the repository and the primary desulfurization framework listed below."
 title: "Desulfurization Reaction–Transport Regimes"
-message: "If you use this repository, please cite the software repository and the associated technical framework."
 type: software
 
 authors:
-  - family-names: Saylam
-    given-names: Ahmad
+  - family-names: "Saylam"
+    given-names: "Ahmad"
+    email: "saylamah@gmail.com"
     orcid: "https://orcid.org/0000-0001-7484-1265"
 
-abstract: >
-  Engineering diagnostic framework for desulfurization reaction–transport
-  regimes, process intensification, and scale-up evaluation in gas and
-  petroleum streams.
+repository-code: "https://github.com/saylamah/desulfurization-reaction-transport-regimes"
+url: "https://github.com/saylamah/desulfurization-reaction-transport-regimes"
+
+abstract: >-
+  Open engineering-screening software, documentation, and illustrative data for
+  diagnosing reaction, transport, diffusion, adsorption, separation, and
+  process-intensification regimes in gas- and petroleum-stream desulfurization.
+  The repository has E3 status as an engineering screening framework and
+  executable research prototype. It is not a validated industrial design,
+  emissions-compliance, or performance-guarantee model; real applications
+  require system-specific data, uncertainty analysis, and independent validation.
 
 keywords:
-  - desulfurization
-  - hydrodesulfurization
-  - oxidative desulfurization
-  - adsorption
-  - hydrodynamic cavitation
-  - mass transfer
-  - reaction engineering
-  - sulfur removal
-  - process intensification
-  - kinetic modeling
+  - "desulfurization"
+  - "hydrodesulfurization"
+  - "oxidative desulfurization"
+  - "adsorptive desulfurization"
+  - "reaction engineering"
+  - "mass transfer"
+  - "internal diffusion"
+  - "Thiele modulus"
+  - "effectiveness factor"
+  - "hydrodynamic cavitation"
+  - "process intensification"
+  - "energy-normalized sulfur removal"
+  - "engineering screening"
+  - "scale-up validation"
 
-license: MIT
-
-repository-code: "https://github.com/saylamah/desulfurization-reaction-transport-regimes"
+license: "MIT"
 
 doi: "10.5281/zenodo.21278796"
+
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21278796"
+    description: "Zenodo concept DOI covering archived versions of the repository."
 
 preferred-citation:
   type: article
   title: "Reaction–Transport Regime Analysis for Desulfurization of Gas and Petroleum Streams: An Engineering Diagnostic Framework"
   authors:
-    - family-names: Saylam
-      given-names: Ahmad
+    - family-names: "Saylam"
+      given-names: "Ahmad"
       orcid: "https://orcid.org/0000-0001-7484-1265"
   year: 2026
   doi: "10.5281/zenodo.20095695"
+
+references:
+  - type: article
+    title: "Industrial Usefulness and Technology Selection in Process Intensification: Energy-Normalized Metrics for Hydrodynamic Cavitation"
+    authors:
+      - family-names: "Saylam"
+        given-names: "Ahmad"
+        orcid: "https://orcid.org/0000-0001-7484-1265"
+    year: 2026
+    doi: "10.5281/zenodo.20593905"
