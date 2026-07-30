@@ -35,9 +35,9 @@ Unless otherwise stated:
 - absolute pressure is used in vapor-pressure and cavitation calculations;
 - all quantities in a dimensionless ratio must use compatible units and bases.
 
-A symbol such as \(k\) is meaningful only when its basis is specified. Depending on the model, it may be:
+A symbol such as $k$ is meaningful only when its basis is specified. Depending on the model, it may be:
 
-- a first-order volumetric rate coefficient, \(\mathrm{s^{-1}}\);
+- a first-order volumetric rate coefficient, $\mathrm{s^{-1}}$;
 - a surface-based coefficient;
 - a catalyst-mass-based coefficient;
 - a higher-order kinetic coefficient with concentration-dependent units;
@@ -49,19 +49,19 @@ Coefficients on different bases must not be combined without conversion.
 
 | Symbol | Meaning | Representative unit |
 |---|---|---|
-| \(C_S\) | sulfur-species concentration | \(\mathrm{mol\,m^{-3}}\) or \(\mathrm{kg\,m^{-3}}\) |
-| \(C_{\mathrm{ox}}\) | oxidant concentration | same concentration basis used in the rate law |
-| \(r_S\) | volumetric sulfur-removal rate | concentration per time |
-| \(k_{\mathrm{obs}}\) | apparent pseudo-first-order coefficient | \(\mathrm{s^{-1}}\) |
-| \(k_L\) | liquid-side mass-transfer coefficient | \(\mathrm{m\,s^{-1}}\) |
-| \(a\) | interfacial area per reactor volume | \(\mathrm{m^2\,m^{-3}} = \mathrm{m^{-1}}\) |
-| \(k_La\) | volumetric mass-transfer coefficient | \(\mathrm{s^{-1}}\) |
-| \(R_p\) | porous-particle radius | \(\mathrm{m}\) |
-| \(D_{\mathrm{eff}}\) | effective diffusivity | \(\mathrm{m^2\,s^{-1}}\) |
-| \(\phi\) | Thiele modulus | dimensionless |
-| \(\eta\) | internal effectiveness factor | dimensionless |
-| \(E\) | energy | \(\mathrm{kWh}\), \(\mathrm{J}\), or another stated unit |
-| \(m_S\) | sulfur mass | \(\mathrm{g}\), \(\mathrm{kg}\), or another stated unit |
+| $C_S$ | sulfur-species concentration | $\mathrm{mol\,m^{-3}}$ or $\mathrm{kg\,m^{-3}}$ |
+| $C_{\mathrm{ox}}$ | oxidant concentration | same concentration basis used in the rate law |
+| $r_S$ | volumetric sulfur-removal rate | concentration per time |
+| $k_{\mathrm{obs}}$ | apparent pseudo-first-order coefficient | $\mathrm{s^{-1}}$ |
+| $k_L$ | liquid-side mass-transfer coefficient | $\mathrm{m\,s^{-1}}$ |
+| $a$ | interfacial area per reactor volume | $\mathrm{m^2\,m^{-3}} = \mathrm{m^{-1}}$ |
+| $k_La$ | volumetric mass-transfer coefficient | $\mathrm{s^{-1}}$ |
+| $R_p$ | porous-particle radius | $\mathrm{m}$ |
+| $D_{\mathrm{eff}}$ | effective diffusivity | $\mathrm{m^2\,s^{-1}}$ |
+| $\phi$ | Thiele modulus | dimensionless |
+| $\eta$ | internal effectiveness factor | dimensionless |
+| $E$ | energy | $\mathrm{kWh}$, $\mathrm{J}$, or another stated unit |
+| $m_S$ | sulfur mass | $\mathrm{g}$, $\mathrm{kg}$, or another stated unit |
 
 ---
 
@@ -69,26 +69,26 @@ Coefficients on different bases must not be combined without conversion.
 
 For a constant-volume batch system, an apparent sulfur conversion may be written as:
 
-\[
+$$
 X_S
 =
 \frac{C_{S,0}-C_S}{C_{S,0}}
-\]
+$$
 
 where:
 
-- \(C_{S,0}\) is the initial sulfur concentration;
-- \(C_S\) is the sulfur concentration at the specified time;
-- \(X_S\) is dimensionless.
+- $C_{S,0}$ is the initial sulfur concentration;
+- $C_S$ is the sulfur concentration at the specified time;
+- $X_S$ is dimensionless.
 
 For a continuous system or a process with changing phase volume, use sulfur molar or mass flow rather than concentration alone:
 
-\[
+$$
 X_S
 =
 \frac{\dot n_{S,\mathrm{in}}-\dot n_{S,\mathrm{out}}}
 {\dot n_{S,\mathrm{in}}}
-\]
+$$
 
 or an equivalent mass-flow expression.
 
@@ -114,51 +114,51 @@ Therefore:
 
 For many screening calculations, sulfur disappearance is represented by:
 
-\[
+$$
 -r_S = k_{\mathrm{obs}} C_S
-\]
+$$
 
 where:
 
-- \(r_S\) is the volumetric sulfur-species removal rate;
-- \(k_{\mathrm{obs}}\) is an observed or apparent first-order coefficient;
-- \(C_S\) is the sulfur-species concentration.
+- $r_S$ is the volumetric sulfur-species removal rate;
+- $k_{\mathrm{obs}}$ is an observed or apparent first-order coefficient;
+- $C_S$ is the sulfur-species concentration.
 
 Dimensional consistency requires:
 
-\[
+$$
 [k_{\mathrm{obs}}] = \mathrm{time^{-1}}
-\]
+$$
 
-For a constant-volume batch system with constant \(k_{\mathrm{obs}}\):
+For a constant-volume batch system with constant $k_{\mathrm{obs}}$:
 
-\[
+$$
 \frac{dC_S}{dt} = -k_{\mathrm{obs}}C_S
-\]
+$$
 
 and integration gives:
 
-\[
+$$
 \ln\left(\frac{C_{S,0}}{C_S}\right)
 =
 k_{\mathrm{obs}}t
-\]
+$$
 
 or:
 
-\[
+$$
 C_S
 =
 C_{S,0}\exp(-k_{\mathrm{obs}}t)
-\]
+$$
 
 The corresponding conversion is:
 
-\[
+$$
 X_S
 =
 1-\exp(-k_{\mathrm{obs}}t)
-\]
+$$
 
 ### Assumptions
 
@@ -172,7 +172,7 @@ This integrated form assumes:
 
 ### Engineering Caution
 
-The fitted \(k_{\mathrm{obs}}\) may include contributions from:
+The fitted $k_{\mathrm{obs}}$ may include contributions from:
 
 - intrinsic reaction kinetics;
 - external mass transfer;
@@ -192,46 +192,46 @@ It must not automatically be interpreted as an intrinsic kinetic coefficient.
 
 A generalized oxidative-desulfurization rate may be represented as:
 
-\[
+$$
 -r_S
 =
 k C_S^n C_{\mathrm{ox}}^m
-\]
+$$
 
 where:
 
-- \(k\) is the kinetic or apparent rate coefficient;
-- \(C_S\) is sulfur-compound concentration;
-- \(C_{\mathrm{ox}}\) is oxidant concentration;
-- \(n\) is the apparent order with respect to sulfur species;
-- \(m\) is the apparent order with respect to oxidant.
+- $k$ is the kinetic or apparent rate coefficient;
+- $C_S$ is sulfur-compound concentration;
+- $C_{\mathrm{ox}}$ is oxidant concentration;
+- $n$ is the apparent order with respect to sulfur species;
+- $m$ is the apparent order with respect to oxidant.
 
-If \(r_S\) is expressed as concentration per time, dimensional consistency requires:
+If $r_S$ is expressed as concentration per time, dimensional consistency requires:
 
-\[
+$$
 [k]
 =
 [\mathrm{concentration}]^{\,1-n-m}
 [\mathrm{time}]^{-1}
-\]
+$$
 
 When oxidant concentration remains approximately constant:
 
-\[
+$$
 k_{\mathrm{obs}}
 =
 k C_{\mathrm{ox}}^m
-\]
+$$
 
-and, only when \(n=1\):
+and, only when $n=1$:
 
-\[
+$$
 -r_S
 =
 k_{\mathrm{obs}}C_S
-\]
+$$
 
-The resulting \(k_{\mathrm{obs}}\) may still depend on:
+The resulting $k_{\mathrm{obs}}$ may still depend on:
 
 - catalyst concentration;
 - phase ratio;
@@ -252,29 +252,29 @@ The pseudo-first-order reduction is not justified when oxidant concentration cha
 
 The temperature dependence of a kinetic coefficient may be represented by:
 
-\[
+$$
 k
 =
 A\exp\left(-\frac{E_a}{RT}\right)
-\]
+$$
 
 where:
 
-- \(A\) is the pre-exponential factor and has the same units as \(k\);
-- \(E_a\) is activation energy, typically \(\mathrm{J\,mol^{-1}}\);
-- \(R\) is the universal gas constant, \(8.314462618\ \mathrm{J\,mol^{-1}\,K^{-1}}\);
-- \(T\) is absolute temperature in kelvin.
+- $A$ is the pre-exponential factor and has the same units as $k$;
+- $E_a$ is activation energy, typically $\mathrm{J\,mol^{-1}}$;
+- $R$ is the universal gas constant, $8.314462618\ \mathrm{J\,mol^{-1}\,K^{-1}}$;
+- $T$ is absolute temperature in kelvin.
 
 The linearized form is:
 
-\[
+$$
 \ln k
 =
 \ln A
 -
 \frac{E_a}{R}
 \frac{1}{T}
-\]
+$$
 
 ### Engineering Caution
 
@@ -296,30 +296,30 @@ A low apparent activation energy may indicate transport influence, but it is not
 
 For gas–liquid or liquid–liquid transfer on a liquid concentration basis:
 
-\[
+$$
 r_{\mathrm{mt}}
 =
 k_La\left(C^*-C\right)
-\]
+$$
 
 where:
 
-- \(r_{\mathrm{mt}}\) is the volumetric transfer rate;
-- \(k_L\) is the liquid-side mass-transfer coefficient;
-- \(a\) is interfacial area per reactor volume;
-- \(k_La\) is the volumetric mass-transfer coefficient;
-- \(C^*\) is the equilibrium concentration corresponding to the interfacial condition;
-- \(C\) is the bulk-phase concentration.
+- $r_{\mathrm{mt}}$ is the volumetric transfer rate;
+- $k_L$ is the liquid-side mass-transfer coefficient;
+- $a$ is interfacial area per reactor volume;
+- $k_La$ is the volumetric mass-transfer coefficient;
+- $C^*$ is the equilibrium concentration corresponding to the interfacial condition;
+- $C$ is the bulk-phase concentration.
 
 Dimensional consistency requires:
 
-\[
+$$
 [k_La]
 =
 \mathrm{time^{-1}}
-\]
+$$
 
-when \(r_{\mathrm{mt}}\) and \(C\) are expressed on the same volumetric concentration basis.
+when $r_{\mathrm{mt}}$ and $C$ are expressed on the same volumetric concentration basis.
 
 This relationship is relevant to:
 
@@ -331,12 +331,12 @@ This relationship is relevant to:
 
 ### Engineering Caution
 
-The notation \(k_La\) can hide changes in both:
+The notation $k_La$ can hide changes in both:
 
-- local transfer coefficient, \(k_L\);
-- interfacial area, \(a\).
+- local transfer coefficient, $k_L$;
+- interfacial area, $a$.
 
-An observed increase in \(k_La\) does not by itself identify which contribution changed.
+An observed increase in $k_La$ does not by itself identify which contribution changed.
 
 ---
 
@@ -344,29 +344,29 @@ An observed increase in \(k_La\) does not by itself identify which contribution 
 
 For a pressure-based gas-side driving force:
 
-\[
+$$
 N_{H_2S}
 =
 K_Ga
 \left(
 P_{H_2S}-P_{H_2S}^*
 \right)
-\]
+$$
 
 where:
 
-- \(N_{H_2S}\) is the volumetric hydrogen-sulfide transfer rate;
-- \(K_Ga\) is an overall volumetric gas-side transfer coefficient;
-- \(P_{H_2S}\) is bulk gas-phase hydrogen-sulfide partial pressure;
-- \(P_{H_2S}^*\) is the equilibrium partial pressure corresponding to the liquid-side condition.
+- $N_{H_2S}$ is the volumetric hydrogen-sulfide transfer rate;
+- $K_Ga$ is an overall volumetric gas-side transfer coefficient;
+- $P_{H_2S}$ is bulk gas-phase hydrogen-sulfide partial pressure;
+- $P_{H_2S}^*$ is the equilibrium partial pressure corresponding to the liquid-side condition.
 
-If \(N_{H_2S}\) is expressed in \(\mathrm{mol\,m^{-3}\,s^{-1}}\) and pressure in pascals:
+If $N_{H_2S}$ is expressed in $\mathrm{mol\,m^{-3}\,s^{-1}}$ and pressure in pascals:
 
-\[
+$$
 [K_Ga]
 =
 \mathrm{mol\,m^{-3}\,s^{-1}\,Pa^{-1}}
-\]
+$$
 
 The observed performance can depend on:
 
@@ -390,47 +390,47 @@ Do not combine pressure-based and concentration-based transfer coefficients with
 
 When both reaction and mass transfer can be represented by first-order coefficients on the same time basis, a diagnostic ratio is:
 
-\[
+$$
 Da_{\mathrm{diag}}
 =
 \frac{k_{\mathrm{rxn}}}{k_La}
-\]
+$$
 
-where both \(k_{\mathrm{rxn}}\) and \(k_La\) have units of \(\mathrm{time^{-1}}\).
+where both $k_{\mathrm{rxn}}$ and $k_La$ have units of $\mathrm{time^{-1}}$.
 
 Approximate screening interpretation:
 
-- \(Da_{\mathrm{diag}} \ll 1\): reaction-controlled tendency;
-- \(Da_{\mathrm{diag}} \approx 1\): coupled reaction–transport tendency;
-- \(Da_{\mathrm{diag}} \gg 1\): mass-transfer-controlled tendency.
+- $Da_{\mathrm{diag}} \ll 1$: reaction-controlled tendency;
+- $Da_{\mathrm{diag}} \approx 1$: coupled reaction–transport tendency;
+- $Da_{\mathrm{diag}} \gg 1$: mass-transfer-controlled tendency.
 
 Equivalently, using characteristic times:
 
-\[
+$$
 Da_{\mathrm{diag}}
 =
 \frac{\tau_{\mathrm{mt}}}{\tau_{\mathrm{rxn}}}
-\]
+$$
 
 with:
 
-\[
+$$
 \tau_{\mathrm{rxn}}
 =
 \frac{1}{k_{\mathrm{rxn}}}
-\]
+$$
 
 and:
 
-\[
+$$
 \tau_{\mathrm{mt}}
 =
 \frac{1}{k_La}
-\]
+$$
 
 ### Important Limitation
 
-The ratio \(k_{\mathrm{rxn}}/k_La\) is dimensionless only when both coefficients use compatible first-order bases.
+The ratio $k_{\mathrm{rxn}}/k_La$ is dimensionless only when both coefficients use compatible first-order bases.
 
 For higher-order kinetics, complex reactor models, reactive absorption, or changing interfacial area, construct the Damköhler number from consistent characteristic rates or timescales. The exact definition depends on:
 
@@ -449,25 +449,25 @@ The repository example therefore uses this quantity as an **illustrative diagnos
 
 For an isothermal spherical porous particle with a first-order volumetric reaction:
 
-\[
+$$
 \phi
 =
 R_p
 \sqrt{
 \frac{k_v}{D_{\mathrm{eff}}}
 }
-\]
+$$
 
 where:
 
-- \(\phi\) is the Thiele modulus;
-- \(R_p\) is particle radius;
-- \(k_v\) is a first-order reaction coefficient on a catalyst-pore-volume basis;
-- \(D_{\mathrm{eff}}\) is effective diffusivity.
+- $\phi$ is the Thiele modulus;
+- $R_p$ is particle radius;
+- $k_v$ is a first-order reaction coefficient on a catalyst-pore-volume basis;
+- $D_{\mathrm{eff}}$ is effective diffusivity.
 
 Dimensional consistency is:
 
-\[
+$$
 [\phi]
 =
 [\mathrm{m}]
@@ -477,7 +477,7 @@ Dimensional consistency is:
 }
 =
 1
-\]
+$$
 
 ### Basis Requirement
 
@@ -491,9 +491,9 @@ it must be converted to a compatible volumetric basis before use in this express
 
 ### Approximate Interpretation
 
-- \(\phi \ll 1\): weak internal diffusion influence;
-- \(\phi \approx 1\): reaction and diffusion are coupled;
-- \(\phi \gg 1\): substantial internal diffusion influence.
+- $\phi \ll 1$: weak internal diffusion influence;
+- $\phi \approx 1$: reaction and diffusion are coupled;
+- $\phi \gg 1$: substantial internal diffusion influence.
 
 These are qualitative screening statements. The practical threshold depends on acceptable catalyst utilization and uncertainty.
 
@@ -515,7 +515,7 @@ The expression assumes:
 
 The internal effectiveness factor is:
 
-\[
+$$
 \eta
 =
 \frac{
@@ -523,43 +523,43 @@ The internal effectiveness factor is:
 }{
 \text{rate if the entire particle were at the external surface concentration}
 }
-\]
+$$
 
 For a first-order reaction in an isothermal spherical particle:
 
-\[
+$$
 \eta
 =
 \frac{3}{\phi^2}
 \left(
 \phi\coth\phi-1
 \right)
-\]
+$$
 
 An equivalent computational form is:
 
-\[
+$$
 \eta
 =
 \frac{3}{\phi^2}
 \left(
 \frac{\phi}{\tanh\phi}-1
 \right)
-\]
+$$
 
 ### Limiting Cases
 
-As \(\phi \rightarrow 0\):
+As $\phi \rightarrow 0$:
 
-\[
+$$
 \eta
 \rightarrow
 1
-\]
+$$
 
-A numerically stable small-\(\phi\) expansion is:
+A numerically stable small-$\phi$ expansion is:
 
-\[
+$$
 \eta
 \approx
 1
@@ -567,41 +567,41 @@ A numerically stable small-\(\phi\) expansion is:
 \frac{\phi^2}{15}
 +
 \frac{2\phi^4}{315}
-\]
+$$
 
-For large \(\phi\):
+For large $\phi$:
 
-\[
+$$
 \eta
 \approx
 \frac{3}{\phi}
 -
 \frac{3}{\phi^2}
-\]
+$$
 
 and the leading behavior is:
 
-\[
+$$
 \eta
 \sim
 \frac{3}{\phi}
-\]
+$$
 
 ### Approximate Interpretation
 
-- \(\eta \approx 1\): most of the particle is effectively utilized;
-- \(0<\eta<1\): internal gradients reduce utilization;
-- \(\eta \ll 1\): substantial internal diffusion resistance.
+- $\eta \approx 1$: most of the particle is effectively utilized;
+- $0<\eta<1$: internal gradients reduce utilization;
+- $\eta \ll 1$: substantial internal diffusion resistance.
 
 ### Numerical Safeguards
 
 A computational implementation should:
 
-- reject negative \(\phi\);
-- return \(\eta=1\) at \(\phi=0\);
-- use a series expansion for very small \(\phi\);
+- reject negative $\phi$;
+- return $\eta=1$ at $\phi=0$;
+- use a series expansion for very small $\phi$;
 - avoid direct evaluation of expressions that subtract nearly equal numbers;
-- verify that \(0<\eta\leq1\) for the stated model.
+- verify that $0<\eta\leq1$ for the stated model.
 
 ---
 
@@ -609,7 +609,7 @@ A computational implementation should:
 
 For idealized finite-capacity adsorption:
 
-\[
+$$
 q_e
 =
 \frac{
@@ -617,42 +617,42 @@ q_{\max}K_LC_e
 }{
 1+K_LC_e
 }
-\]
+$$
 
 where:
 
-- \(q_e\) is equilibrium adsorption capacity;
-- \(q_{\max}\) is maximum monolayer capacity;
-- \(K_L\) is the Langmuir affinity coefficient;
-- \(C_e\) is equilibrium sulfur concentration.
+- $q_e$ is equilibrium adsorption capacity;
+- $q_{\max}$ is maximum monolayer capacity;
+- $K_L$ is the Langmuir affinity coefficient;
+- $C_e$ is equilibrium sulfur concentration.
 
 Dimensional consistency requires:
 
-\[
+$$
 [K_L]
 =
 [\mathrm{concentration}]^{-1}
-\]
+$$
 
-so that \(K_LC_e\) is dimensionless.
+so that $K_LC_e$ is dimensionless.
 
 ### Limiting Cases
 
-When \(K_LC_e \ll 1\):
+When $K_LC_e \ll 1$:
 
-\[
+$$
 q_e
 \approx
 q_{\max}K_LC_e
-\]
+$$
 
-When \(K_LC_e \gg 1\):
+When $K_LC_e \gg 1$:
 
-\[
+$$
 q_e
 \rightarrow
 q_{\max}
-\]
+$$
 
 ### Assumptions and Limits
 
@@ -666,24 +666,24 @@ Agreement with the equation does not prove that these assumptions describe the a
 
 An empirical heterogeneous-surface relation is:
 
-\[
+$$
 q_e
 =
 K_F C_e^{1/n_F}
-\]
+$$
 
 where:
 
-- \(K_F\) is the Freundlich capacity coefficient;
-- \(n_F\) is an empirical heterogeneity parameter.
+- $K_F$ is the Freundlich capacity coefficient;
+- $n_F$ is an empirical heterogeneity parameter.
 
-The units of \(K_F\) depend on:
+The units of $K_F$ depend on:
 
-- the units of \(q_e\);
-- the units of \(C_e\);
-- the value of \(1/n_F\).
+- the units of $q_e$;
+- the units of $C_e$;
+- the value of $1/n_F$.
 
-Therefore, \(K_F\) values cannot be compared unless concentration and loading bases are identical.
+Therefore, $K_F$ values cannot be compared unless concentration and loading bases are identical.
 
 ### Engineering Caution
 
@@ -697,36 +697,36 @@ Model agreement alone is not proof of a specific adsorption mechanism.
 
 A commonly used empirical adsorption-kinetics expression is:
 
-\[
+$$
 \frac{dq}{dt}
 =
 k_2(q_e-q)^2
-\]
+$$
 
 where:
 
-- \(q\) is loading at time \(t\);
-- \(q_e\) is fitted equilibrium loading;
-- \(k_2\) is the pseudo-second-order coefficient.
+- $q$ is loading at time $t$;
+- $q_e$ is fitted equilibrium loading;
+- $k_2$ is the pseudo-second-order coefficient.
 
-If \(q\) is expressed as mass of adsorbate per mass of adsorbent:
+If $q$ is expressed as mass of adsorbate per mass of adsorbent:
 
-\[
+$$
 [k_2]
 =
 [q]^{-1}
 [\mathrm{time}]^{-1}
-\]
+$$
 
-For \(q(0)=0\), integration gives:
+For $q(0)=0$, integration gives:
 
-\[
+$$
 \frac{t}{q_t}
 =
 \frac{1}{k_2q_e^2}
 +
 \frac{t}{q_e}
-\]
+$$
 
 ### Engineering Caution
 
@@ -747,19 +747,19 @@ Mechanistic interpretation requires complementary evidence such as:
 
 For two linear sequential resistances expressed on a common coefficient basis:
 
-\[
+$$
 \frac{1}{k_{\mathrm{overall}}}
 =
 \frac{1}{k_{\mathrm{rxn}}}
 +
 \frac{1}{k_{\mathrm{mt}}}
-\]
+$$
 
 where all coefficients must have compatible units and driving-force definitions.
 
 This gives:
 
-\[
+$$
 k_{\mathrm{overall}}
 =
 \frac{
@@ -767,41 +767,41 @@ k_{\mathrm{rxn}}k_{\mathrm{mt}}
 }{
 k_{\mathrm{rxn}}+k_{\mathrm{mt}}
 }
-\]
+$$
 
 ### Limiting Cases
 
 If:
 
-\[
+$$
 k_{\mathrm{rxn}}
 \ll
 k_{\mathrm{mt}}
-\]
+$$
 
 then:
 
-\[
+$$
 k_{\mathrm{overall}}
 \approx
 k_{\mathrm{rxn}}
-\]
+$$
 
 If:
 
-\[
+$$
 k_{\mathrm{mt}}
 \ll
 k_{\mathrm{rxn}}
-\]
+$$
 
 then:
 
-\[
+$$
 k_{\mathrm{overall}}
 \approx
 k_{\mathrm{mt}}
-\]
+$$
 
 ### Applicability Boundary
 
@@ -821,7 +821,7 @@ It is a conceptual screening relation, not a universal reactor equation.
 
 For hydrodynamic-cavitation-assisted desulfurization, define:
 
-\[
+$$
 F_{\mathrm{app}}
 =
 \frac{
@@ -829,18 +829,18 @@ k_{\mathrm{app,HC}}
 }{
 k_{\mathrm{app,ref}}
 }
-\]
+$$
 
 where:
 
-- \(k_{\mathrm{app,HC}}\) is the apparent coefficient under hydrodynamic-cavitation conditions;
-- \(k_{\mathrm{app,ref}}\) is the apparent coefficient for a defined reference case.
+- $k_{\mathrm{app,HC}}$ is the apparent coefficient under hydrodynamic-cavitation conditions;
+- $k_{\mathrm{app,ref}}$ is the apparent coefficient for a defined reference case.
 
 Interpretation:
 
-- \(F_{\mathrm{app}}>1\): higher apparent rate than the reference;
-- \(F_{\mathrm{app}}=1\): no apparent rate difference;
-- \(F_{\mathrm{app}}<1\): lower apparent rate than the reference.
+- $F_{\mathrm{app}}>1$: higher apparent rate than the reference;
+- $F_{\mathrm{app}}=1$: no apparent rate difference;
+- $F_{\mathrm{app}}<1$: lower apparent rate than the reference.
 
 ### Comparability Requirements
 
@@ -879,7 +879,7 @@ A value above unity does not prove industrial usefulness. Evaluate:
 
 A commonly used hydrodynamic cavitation number is:
 
-\[
+$$
 \sigma
 =
 \frac{
@@ -887,24 +887,24 @@ p_{\mathrm{ref}}-p_v
 }{
 \frac{1}{2}\rho v^2
 }
-\]
+$$
 
 where:
 
-- \(p_{\mathrm{ref}}\) is a stated downstream, recovery, or reference absolute pressure;
-- \(p_v\) is vapor pressure at the local fluid temperature;
-- \(\rho\) is fluid density;
-- \(v\) is the stated characteristic velocity.
+- $p_{\mathrm{ref}}$ is a stated downstream, recovery, or reference absolute pressure;
+- $p_v$ is vapor pressure at the local fluid temperature;
+- $\rho$ is fluid density;
+- $v$ is the stated characteristic velocity.
 
 Dimensional consistency is:
 
-\[
+$$
 [\sigma]
 =
 \frac{\mathrm{Pa}}{\mathrm{Pa}}
 =
 1
-\]
+$$
 
 ### Definition Requirement
 
@@ -921,7 +921,7 @@ Every reported value should identify:
 
 ### Engineering Caution
 
-Lower \(\sigma\) may correspond to stronger cavitation tendency within a defined setup, but equal values do not guarantee equal:
+Lower $\sigma$ may correspond to stronger cavitation tendency within a defined setup, but equal values do not guarantee equal:
 
 - cavity dynamics;
 - collapse intensity;
@@ -938,13 +938,13 @@ The cavitation number is a hydrodynamic descriptor, not a universal performance 
 
 For comparison with a reference case:
 
-\[
+$$
 \Delta m_S
 =
 m_{S,\mathrm{removed,HC}}
 -
 m_{S,\mathrm{removed,ref}}
-\]
+$$
 
 where both sulfur-removal quantities use the same:
 
@@ -956,9 +956,9 @@ where both sulfur-removal quantities use the same:
 
 Interpretation:
 
-- \(\Delta m_S>0\): positive incremental removal;
-- \(\Delta m_S=0\): no incremental removal;
-- \(\Delta m_S<0\): poorer removal than the reference.
+- $\Delta m_S>0$: positive incremental removal;
+- $\Delta m_S=0$: no incremental removal;
+- $\Delta m_S<0$: poorer removal than the reference.
 
 Gross removal in the intensified case must not be substituted for incremental removal when the objective is to quantify the benefit attributable to intensification.
 
@@ -968,13 +968,13 @@ Gross removal in the intensified case must not be substituted for incremental re
 
 Define the incremental energy associated with intensification as:
 
-\[
+$$
 \Delta E
 =
 E_{\mathrm{HC}}
 -
 E_{\mathrm{ref}}
-\]
+$$
 
 where the energy boundary should specify, as applicable:
 
@@ -1001,7 +1001,7 @@ These are not interchangeable.
 
 For a positive incremental energy input:
 
-\[
+$$
 EN_S
 =
 \frac{
@@ -1009,28 +1009,28 @@ EN_S
 }{
 \Delta E
 }
-\]
+$$
 
 where:
 
-- \(\Delta m_S\) is incremental sulfur removed relative to the reference;
-- \(\Delta E\) is additional energy consumed relative to the reference.
+- $\Delta m_S$ is incremental sulfur removed relative to the reference;
+- $\Delta E$ is additional energy consumed relative to the reference.
 
 Representative units include:
 
-\[
+$$
 \mathrm{g\ S\,kWh^{-1}}
-\]
+$$
 
 or:
 
-\[
+$$
 \mathrm{kg\ S\,kWh^{-1}}
-\]
+$$
 
 The reciprocal specific energy demand is:
 
-\[
+$$
 SEC_S
 =
 \frac{
@@ -1038,38 +1038,38 @@ SEC_S
 }{
 \Delta m_S
 }
-\]
+$$
 
 with representative units such as:
 
-\[
+$$
 \mathrm{kWh\,g^{-1}\ S}
-\]
+$$
 
 or:
 
-\[
+$$
 \mathrm{kWh\,kg^{-1}\ S}
-\]
+$$
 
 For positive finite values:
 
-\[
+$$
 EN_S
 \cdot
 SEC_S
 =
 1
-\]
+$$
 
 provided reciprocal units are used consistently.
 
 ### Numerical and Interpretive Safeguards
 
-- If \(\Delta E=0\), \(EN_S\) is undefined.
-- If \(\Delta m_S=0\), \(SEC_S\) is undefined.
-- If \(\Delta m_S<0\), the intensified case has a negative incremental sulfur-removal benefit.
-- If \(\Delta E<0\), the comparison requires explicit interpretation because the intensified configuration uses less energy than the reference.
+- If $\Delta E=0$, $EN_S$ is undefined.
+- If $\Delta m_S=0$, $SEC_S$ is undefined.
+- If $\Delta m_S<0$, the intensified case has a negative incremental sulfur-removal benefit.
+- If $\Delta E<0$, the comparison requires explicit interpretation because the intensified configuration uses less energy than the reference.
 - Report uncertainty when either numerator is obtained by subtracting similar measured quantities.
 
 A large numerical value is not sufficient evidence of usefulness unless product quality, separation, reliability, and scale-up constraints are also acceptable.
@@ -1080,7 +1080,7 @@ A large numerical value is not sufficient evidence of usefulness unless product 
 
 A stoichiometric oxidant-utilization efficiency may be defined as:
 
-\[
+$$
 \eta_{\mathrm{ox}}
 =
 \frac{
@@ -1088,22 +1088,22 @@ n_{\mathrm{ox,stoich,target}}
 }{
 n_{\mathrm{ox,supplied}}
 }
-\]
+$$
 
 with:
 
-\[
+$$
 n_{\mathrm{ox,stoich,target}}
 =
 \nu_{\mathrm{ox}}
 n_{S,\mathrm{converted,target}}
-\]
+$$
 
 where:
 
-- \(n_{\mathrm{ox,supplied}}\) is oxidant supplied on a molar or equivalent basis;
-- \(n_{S,\mathrm{converted,target}}\) is moles of target sulfur converted to the specified oxidation state;
-- \(\nu_{\mathrm{ox}}\) is the stoichiometric oxidant requirement per mole of target sulfur conversion.
+- $n_{\mathrm{ox,supplied}}$ is oxidant supplied on a molar or equivalent basis;
+- $n_{S,\mathrm{converted,target}}$ is moles of target sulfur converted to the specified oxidation state;
+- $\nu_{\mathrm{ox}}$ is the stoichiometric oxidant requirement per mole of target sulfur conversion.
 
 A rigorous definition must state:
 
@@ -1119,13 +1119,13 @@ A rigorous definition must state:
 
 For a consistent closed basis:
 
-\[
+$$
 0
 \leq
 \eta_{\mathrm{ox}}
 \leq
 1
-\]
+$$
 
 A calculated value above unity indicates that the basis, stoichiometry, sulfur analysis, oxidant analysis, or assumed reaction pathway requires review.
 
@@ -1135,7 +1135,7 @@ A calculated value above unity indicates that the basis, stoichiometry, sulfur a
 
 For transformed sulfur entering a downstream separation step:
 
-\[
+$$
 \eta_{\mathrm{sep}}
 =
 \frac{
@@ -1143,7 +1143,7 @@ m_{S,\mathrm{removed\ from\ product}}
 }{
 m_{S,\mathrm{available\ for\ separation}}
 }
-\]
+$$
 
 where:
 
@@ -1152,13 +1152,13 @@ where:
 
 For a consistent nonnegative basis:
 
-\[
+$$
 0
 \leq
 \eta_{\mathrm{sep}}
 \leq
 1
-\]
+$$
 
 The final product sulfur concentration should be measured after the complete reaction and separation sequence.
 
@@ -1172,7 +1172,7 @@ This distinction is essential:
 
 For a batch or continuous process over a defined accounting interval:
 
-\[
+$$
 B_S
 =
 \frac{
@@ -1182,11 +1182,11 @@ B_S
 }{
 \sum m_{S,\mathrm{in}}
 }
-\]
+$$
 
 For a closed batch system without external sulfur input or output after charging:
 
-\[
+$$
 B_S
 =
 \frac{
@@ -1194,11 +1194,11 @@ B_S
 }{
 m_{S,0}
 }
-\]
+$$
 
 A relative closure error may be reported as:
 
-\[
+$$
 \varepsilon_S
 =
 \left|
@@ -1206,7 +1206,7 @@ B_S-1
 \right|
 \times
 100\%
-\]
+$$
 
 The balance should include, where relevant:
 
@@ -1229,15 +1229,15 @@ A numerically closed total-sulfur balance does not establish reaction mechanism.
 
 For a ratio:
 
-\[
+$$
 y
 =
 \frac{a}{b}
-\]
+$$
 
-with independent uncertainties \(u_a\) and \(u_b\), a first-order relative uncertainty estimate is:
+with independent uncertainties $u_a$ and $u_b$, a first-order relative uncertainty estimate is:
 
-\[
+$$
 \left(
 \frac{u_y}{y}
 \right)^2
@@ -1249,7 +1249,7 @@ with independent uncertainties \(u_a\) and \(u_b\), a first-order relative uncer
 \left(
 \frac{u_b}{b}
 \right)^2
-\]
+$$
 
 This approximation is relevant to:
 
