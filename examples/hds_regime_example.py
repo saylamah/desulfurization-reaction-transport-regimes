@@ -6,6 +6,15 @@ isothermal spherical porous catalyst particle. It calculates the Thiele
 modulus, the exact spherical-particle effectiveness factor, the model-implied
 Weisz-Prater parameter, and a qualitative engineering screening statement.
 
+Authoritative inputs
+--------------------
+Illustrative numerical inputs are loaded from:
+
+    data/example_parameters.csv
+
+The shared loader validates the CSV structure, units, duplicate definitions,
+case labels, and numerical values before the model is evaluated.
+
 Scientific scope
 ----------------
 The model assumes:
@@ -37,10 +46,25 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import math
+from pathlib import Path
+
+try:
+    from .example_parameter_loader import (
+        ParameterStore,
+        load_default_parameter_store,
+    )
+except ImportError:
+    from example_parameter_loader import (
+        ParameterStore,
+        load_default_parameter_store,
+    )
 
 
 SMALL_PHI_THRESHOLD = 1.0e-4
 LARGE_PHI_THRESHOLD = 50.0
+
+EXAMPLE_ID = "hds_internal_diffusion"
+CASE_ID = "hds_default"
 
 
 @dataclass(frozen=True, slots=True)
@@ -57,8 +81,8 @@ class HDSInternalDiffusionCase:
         Intrinsic first-order rate coefficient on a compatible catalyst
         particle-volume basis, s^-1.
     effective_diffusivity_m2_s:
-        Effective diffusivity of the sulfur species in the porous particle,
-        m^2/s.
+        Effective diffusivity of the representative sulfur species in the
+        porous particle, m^2/s.
     """
 
     name: str
@@ -98,13 +122,17 @@ class HDSInternalDiffusionResult:
 def _require_finite_positive(name: str, value: float) -> None:
     """Require a finite value strictly greater than zero."""
     if not math.isfinite(value) or value <= 0.0:
-        raise ValueError(f"{name} must be finite and greater than zero.")
+        raise ValueError(
+            f"{name} must be finite and greater than zero."
+        )
 
 
 def _require_finite_nonnegative(name: str, value: float) -> None:
     """Require a finite value greater than or equal to zero."""
     if not math.isfinite(value) or value < 0.0:
-        raise ValueError(f"{name} must be finite and non-negative.")
+        raise ValueError(
+            f"{name} must be finite and non-negative."
+        )
 
 
 def thiele_modulus(
@@ -123,7 +151,10 @@ def thiele_modulus(
     active-site-based coefficient must first be converted to a compatible
     volumetric basis.
     """
-    _require_finite_positive("particle_radius_m", particle_radius_m)
+    _require_finite_positive(
+        "particle_radius_m",
+        particle_radius_m,
+    )
     _require_finite_nonnegative(
         "volumetric_rate_constant_s_inv",
         volumetric_rate_constant_s_inv,
@@ -134,7 +165,8 @@ def thiele_modulus(
     )
 
     return particle_radius_m * math.sqrt(
-        volumetric_rate_constant_s_inv / effective_diffusivity_m2_s
+        volumetric_rate_constant_s_inv
+        / effective_diffusivity_m2_s
     )
 
 
@@ -147,7 +179,7 @@ def effectiveness_factor_sphere(phi: float) -> float:
 
     A series expansion is used for very small ``phi`` to avoid numerical
     cancellation. A large-``phi`` asymptotic expression is used to avoid
-    unnecessary loss of numerical stability.
+    unnecessary numerical loss.
     """
     _require_finite_nonnegative("phi", phi)
 
@@ -173,7 +205,7 @@ def effectiveness_factor_sphere(phi: float) -> float:
             * (phi / math.tanh(phi) - 1.0)
         )
 
-    # Roundoff protection for the theoretical interval 0 < eta <= 1.
+    # Floating-point protection for the theoretical interval 0 < eta <= 1.
     return min(1.0, max(0.0, eta))
 
 
@@ -188,12 +220,12 @@ def model_implied_weisz_prater(
         C_WP = eta * phi**2
 
     This is a model-consistency quantity. In an experimental assessment,
-    the Weisz-Prater parameter should be constructed from:
+    the Weisz-Prater parameter should instead be constructed from:
 
-    * the observed reaction rate on a particle-volume basis;
-    * the sulfur concentration at the external particle surface;
+    * observed rate on a particle-volume basis;
+    * sulfur concentration at the external particle surface;
     * particle radius;
-    * an independently justified effective diffusivity.
+    * independently justified effective diffusivity.
 
     Bulk concentration should not replace surface concentration when
     external-film resistance is significant.
@@ -214,17 +246,13 @@ def classify_internal_diffusion(
 ) -> str:
     """Return an illustrative qualitative screening statement.
 
-    The categories are based primarily on catalyst utilization represented
-    by the effectiveness factor. They are not universal design criteria.
+    Classification is based primarily on internal catalyst utilization
+    represented by the effectiveness factor.
 
-    Project-specific acceptance limits should consider:
-
-    * measurement uncertainty;
-    * catalyst cost;
-    * reactor configuration;
-    * allowable utilization loss;
-    * pressure-drop consequences;
-    * feed and sulfur-species variability.
+    These categories are explicit screening conventions, not universal
+    design criteria. Project-specific limits should consider uncertainty,
+    catalyst cost, reactor configuration, pressure drop, and the acceptable
+    loss of catalyst utilization.
     """
     _require_finite_nonnegative("phi", phi)
 
@@ -286,96 +314,150 @@ def evaluate_case(
     )
 
 
-def default_case() -> HDSInternalDiffusionCase:
-    """Return the repository's illustrative demonstration case."""
+def case_from_parameter_store(
+    store: ParameterStore,
+) -> HDSInternalDiffusionCase:
+    """Build the documented HDS case from the validated CSV dataset."""
     return HDSInternalDiffusionCase(
-        name="Illustrative HDS porous-particle case",
-        particle_radius_m=1.0e-3,
-        volumetric_rate_constant_s_inv=5.0e-2,
-        effective_diffusivity_m2_s=1.0e-8,
+        name=store.case_label(
+            EXAMPLE_ID,
+            CASE_ID,
+        ),
+        particle_radius_m=store.value(
+            EXAMPLE_ID,
+            CASE_ID,
+            "particle_radius_m",
+            expected_unit="m",
+        ),
+        volumetric_rate_constant_s_inv=store.value(
+            EXAMPLE_ID,
+            CASE_ID,
+            "volumetric_rate_constant_s_inv",
+            expected_unit="s^-1",
+        ),
+        effective_diffusivity_m2_s=store.value(
+            EXAMPLE_ID,
+            CASE_ID,
+            "effective_diffusivity_m2_s",
+            expected_unit="m^2/s",
+        ),
     )
+
+
+def default_case(
+    store: ParameterStore | None = None,
+) -> HDSInternalDiffusionCase:
+    """Return the authoritative illustrative HDS case.
+
+    When no store is supplied, the repository CSV is loaded and validated.
+    """
+    parameter_store = (
+        store
+        if store is not None
+        else load_default_parameter_store()
+    )
+
+    return case_from_parameter_store(parameter_store)
 
 
 def render_results(
     case: HDSInternalDiffusionCase,
     result: HDSInternalDiffusionResult,
+    parameter_source: str | Path | None = None,
 ) -> str:
     """Return a human-readable screening report."""
     lines = [
         "HDS INTERNAL-DIFFUSION REGIME SCREENING",
-        "=" * 56,
-        f"{'Case':<27}: {case.name}",
-        (
-            f"{'Particle radius':<27}: "
-            f"{case.particle_radius_m:.3e} m"
-        ),
-        (
-            f"{'Volumetric rate coefficient':<27}: "
-            f"{case.volumetric_rate_constant_s_inv:.3e} s^-1"
-        ),
-        (
-            f"{'Effective diffusivity':<27}: "
-            f"{case.effective_diffusivity_m2_s:.3e} m^2/s"
-        ),
-        "-" * 56,
-        (
-            f"{'Thiele modulus, phi':<27}: "
-            f"{result.thiele_modulus:.4f}"
-        ),
-        (
-            f"{'Effectiveness factor':<27}: "
-            f"{result.effectiveness_factor:.4f}"
-        ),
-        (
-            f"{'Model-implied C_WP':<27}: "
-            f"{result.model_implied_weisz_prater:.4f}"
-        ),
-        (
-            f"{'Internal utilization loss':<27}: "
-            f"{result.internal_utilization_loss_percent:.2f} %"
-        ),
-        (
-            f"{'Screening statement':<27}: "
-            f"{result.screening_statement}"
-        ),
-        "",
-        "Scientific interpretation:",
-        (
-            "The effectiveness factor represents internal catalyst "
-            "utilization only under the stated first-order, isothermal, "
-            "spherical-particle assumptions."
-        ),
-        (
-            "The model does not include external-film resistance, "
-            "hydrogen transport, competitive adsorption, "
-            "sulfur-species-dependent kinetics, catalyst deactivation, "
-            "heat effects, pore-size distributions, or reactor "
-            "hydrodynamics."
-        ),
-        "",
-        "Required validation before engineering use:",
-        (
-            "Use traceable kinetic and diffusivity data on compatible "
-            "bases; test particle-size sensitivity; evaluate external "
-            "mass transfer independently; characterize sulfur "
-            "speciation, pore structure, wetting, deactivation, "
-            "temperature, pressure, and feed composition; and quantify "
-            "uncertainty."
-        ),
-        "",
-        "Evidence status:",
-        "E3 engineering-screening research prototype.",
+        "=" * 64,
+        f"{'Case':<31}: {case.name}",
     ]
+
+    if parameter_source is not None:
+        lines.append(
+            f"{'Authoritative input source':<31}: {parameter_source}"
+        )
+
+    lines.extend(
+        [
+            (
+                f"{'Particle radius':<31}: "
+                f"{case.particle_radius_m:.3e} m"
+            ),
+            (
+                f"{'Volumetric rate coefficient':<31}: "
+                f"{case.volumetric_rate_constant_s_inv:.3e} s^-1"
+            ),
+            (
+                f"{'Effective diffusivity':<31}: "
+                f"{case.effective_diffusivity_m2_s:.3e} m^2/s"
+            ),
+            "-" * 64,
+            (
+                f"{'Thiele modulus, phi':<31}: "
+                f"{result.thiele_modulus:.4f}"
+            ),
+            (
+                f"{'Effectiveness factor':<31}: "
+                f"{result.effectiveness_factor:.4f}"
+            ),
+            (
+                f"{'Model-implied C_WP':<31}: "
+                f"{result.model_implied_weisz_prater:.4f}"
+            ),
+            (
+                f"{'Internal utilization loss':<31}: "
+                f"{result.internal_utilization_loss_percent:.2f} %"
+            ),
+            (
+                f"{'Screening statement':<31}: "
+                f"{result.screening_statement}"
+            ),
+            "",
+            "Scientific interpretation:",
+            (
+                "The effectiveness factor represents internal catalyst "
+                "utilization only under the stated first-order, isothermal, "
+                "spherical-particle assumptions."
+            ),
+            (
+                "The model does not include external-film resistance, "
+                "hydrogen transport, competitive adsorption, "
+                "sulfur-species-dependent kinetics, catalyst deactivation, "
+                "heat effects, pore-size distributions, or reactor "
+                "hydrodynamics."
+            ),
+            "",
+            "Required validation before engineering use:",
+            (
+                "Use traceable kinetic and diffusivity data on compatible "
+                "bases; test particle-size sensitivity; evaluate external "
+                "mass transfer independently; characterize sulfur "
+                "speciation, pore structure, wetting, deactivation, "
+                "temperature, pressure, and feed composition; and quantify "
+                "uncertainty."
+            ),
+            "",
+            "Evidence status:",
+            "E3 engineering-screening research prototype.",
+        ]
+    )
 
     return "\n".join(lines)
 
 
 def main() -> None:
-    """Run the illustrative repository example."""
-    case = default_case()
+    """Load, validate, and evaluate the illustrative repository case."""
+    store = load_default_parameter_store()
+    case = case_from_parameter_store(store)
     result = evaluate_case(case)
 
-    print(render_results(case, result))
+    print(
+        render_results(
+            case=case,
+            result=result,
+            parameter_source=store.source_path,
+        )
+    )
 
 
 if __name__ == "__main__":
