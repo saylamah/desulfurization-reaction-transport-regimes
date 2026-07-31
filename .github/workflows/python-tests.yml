@@ -1,0 +1,67 @@
+name: Python scientific validation
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version:
+          - "3.10"
+          - "3.11"
+          - "3.12"
+          - "3.13"
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Report Python environment
+        run: |
+          python --version
+          python -c "import platform; print(platform.platform())"
+
+      - name: Check Python syntax
+        run: |
+          python -m compileall -q examples tests
+
+      - name: Validate authoritative parameter dataset
+        run: |
+          python examples/example_parameter_loader.py
+
+      - name: Run HDS internal-diffusion example
+        run: |
+          python examples/hds_regime_example.py
+
+      - name: Run ODS reaction-transfer example
+        run: |
+          python examples/ods_mass_transfer_example.py
+
+      - name: Run cavitation-intensification example
+        run: |
+          python examples/cavitation_intensification_example.py
+
+      - name: Run scientific and numerical tests
+        run: |
+          python -m unittest discover \
+            -s tests \
+            -p "test_*.py" \
+            -v
