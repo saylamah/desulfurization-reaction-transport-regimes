@@ -1,8 +1,11 @@
 # Desulfurization Reaction–Transport Regimes
 
 [![Python scientific validation](https://github.com/saylamah/desulfurization-reaction-transport-regimes/actions/workflows/python-tests.yml/badge.svg)](https://github.com/saylamah/desulfurization-reaction-transport-regimes/actions/workflows/python-tests.yml)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21278796.svg)](https://doi.org/10.5281/zenodo.21278796)
-[![Software License: MIT](https://img.shields.io/badge/software%20license-MIT-blue.svg)](LICENSE)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21822495.svg)](https://doi.org/10.5281/zenodo.21822495)
+Current software release (v1.1.0):  
+[https://doi.org/10.5281/zenodo.21822495](https://doi.org/10.5281/zenodo.21822495)
+Concept record / all versions:  
+[https://doi.org/10.5281/zenodo.21278796](https://doi.org/10.5281/zenodo.21278796)
 
 An engineering diagnostic framework for identifying reaction–transport limitations, evaluating process-intensification options, and supporting technically defensible scale-up decisions in gas- and petroleum-stream desulfurization.
 
