@@ -1,0 +1,5 @@
+case_id,case_label,reaction_coefficient_s_inv,effective_transfer_coefficient_s_inv,dominance_fraction,sensitivity_factor
+ODS-REACTION,Reaction-controlled tendency,0.002,0.02,0.8,2.0
+ODS-MIXED,Mixed reaction-transfer tendency,0.01,0.01,0.8,2.0
+ODS-TRANSFER,External-transfer-controlled tendency,0.02,0.002,0.8,2.0
+ODS-THRESHOLD,Transfer-dominance threshold illustration,0.02,0.005,0.8,2.0

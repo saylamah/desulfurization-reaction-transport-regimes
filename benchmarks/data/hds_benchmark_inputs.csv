@@ -1,0 +1,5 @@
+case_id,case_label,particle_radius_m,volumetric_rate_constant_s_inv,effective_diffusivity_m2_s
+HDS-WEAK,Weak internal-diffusion influence,0.001,0.0025,1e-08
+HDS-MILD,Mild reaction-diffusion coupling,0.001,0.01,1e-08
+HDS-SIGNIFICANT,Significant reaction-diffusion coupling,0.001,0.05,1e-08
+HDS-STRONG,Strong internal-diffusion influence,0.001,1.0,1e-08
